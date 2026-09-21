@@ -1,0 +1,86 @@
+/* 
+  Luxury Redesign Styles 
+  Aesop / Kinfolk Aesthetic
+*/
+
+/* Hide scrollbar for horizontal scrolling */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* Base resets for luxury feel */
+html {
+    scroll-behavior: smooth;
+    /* Sharp text rendering */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Image zoom on hover for product cards */
+.product-card {
+    border-bottom: 1px solid #22543d20;
+    border-right: 1px solid #22543d20;
+}
+.product-card:nth-child(3n) {
+    border-right: none; /* Remove right border for last item in grid (assuming 3 columns) */
+}
+
+.product-img-wrapper {
+    overflow: hidden;
+}
+.product-img {
+    transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.product-card:hover .product-img {
+    transform: scale(1.08);
+}
+
+/* Grid borders */
+.grid-border-bottom {
+    border-bottom: 1px solid rgba(34, 84, 61, 0.15);
+}
+.grid-border-right {
+    border-right: 1px solid rgba(34, 84, 61, 0.15);
+}
+.grid-border-top {
+    border-top: 1px solid rgba(34, 84, 61, 0.15);
+}
+
+/* Floating labels in Hero */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+.floating-tag {
+    animation: float 4s ease-in-out infinite;
+}
+.floating-tag:nth-child(2) {
+    animation-delay: 1.5s;
+}
+.floating-tag:nth-child(3) {
+    animation-delay: 3s;
+}
+
+/* Minimalist Underline Hover */
+.nav-link {
+    position: relative;
+    display: inline-block;
+}
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: -2px;
+    left: 0;
+    background-color: currentColor;
+    transition: width 0.3s ease;
+}
+.nav-link:hover::after {
+    width: 100%;
+}
